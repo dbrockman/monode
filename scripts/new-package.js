@@ -2,8 +2,8 @@ const fs = require('fs');
 const { join } = require('path');
 const inquirer = require('inquirer');
 const prettier = require('prettier');
-const prettier_config = require('./.prettierrc.js');
-const { version } = require('./lerna.json');
+const prettier_config = require('../.prettierrc.js');
+const { version } = require('../lerna.json');
 
 const scope = '@dbrockman';
 
@@ -46,7 +46,7 @@ function validatePackageName(name) {
   if (!re.test(name)) {
     return `The package name must match the regexp ${re}`;
   }
-  if (fs.existsSync(join(__dirname, 'code', name))) {
+  if (fs.existsSync(pathTo(name))) {
     return `A package with name "${name}" already exists.`;
   }
   return true;
@@ -55,9 +55,9 @@ function validatePackageName(name) {
 function writePackageStub(answers) {
   const { name } = answers;
 
-  fs.mkdirSync(join(__dirname, 'code', name));
-  fs.mkdirSync(join(__dirname, 'code', name, 'src'));
-  fs.mkdirSync(join(__dirname, 'code', name, 'src/__tests__'));
+  fs.mkdirSync(pathTo(name));
+  fs.mkdirSync(pathTo(name, 'src'));
+  fs.mkdirSync(pathTo(name, 'src/__tests__'));
 
   writeFile(
     name,
@@ -134,7 +134,7 @@ function writePackageStub(answers) {
 }
 
 function writeFile(name, rel_path, parser, content) {
-  const file_path = join(__dirname, 'code', name, rel_path);
+  const file_path = pathTo(name, rel_path);
   const str = parser === 'json' ? JSON.stringify(content, null, 2) : content;
   const formatted = prettier.format(str, { ...prettier_config, parser });
   fs.writeFileSync(file_path, formatted, { encoding: 'utf8' });
@@ -145,4 +145,8 @@ function trimIndentation(str) {
     .split('\n')
     .map((s) => s.trimLeft())
     .join('\n');
+}
+
+function pathTo(...parts) {
+  return join(__dirname, '..', 'code', ...parts);
 }
