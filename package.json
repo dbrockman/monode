@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "workspaces": [
+    "code/*"
+  ],
+  "scripts": {
+    "new-package": "node ./new-package.js",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "pretest": "yarn run build",
+    "test": "jest",
+    "lint": "# linter not configured yet",
+    "bump-version-and-publish": "lerna version --conventional-commits --create-release github --yes && lerna publish --yes"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.0.10",
+    "del-cli": "^2.0.0",
+    "inquirer": "^6.4.1",
+    "jest": "^24.8.0",
+    "lerna": "^3.15.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.2"
+  },
+  "repository": "git@github.com:dbrockman/monode.git",
+  "homepage": "https://github.com/dbrockman/monode#readme"
+}
