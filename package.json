@@ -10,7 +10,6 @@
     "build": "lerna run build",
     "test": "jest",
     "lint": "# linter not configured yet",
-    "bump-version-and-publish": "lerna version --conventional-commits --create-release github --yes && lerna publish --yes",
     "postinstall": "yarn run bootstrap",
     "pretest": "yarn run build"
   },

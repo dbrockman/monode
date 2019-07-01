@@ -5,7 +5,7 @@ LABEL "com.github.actions.description"="Run a Yarn command using the checked-in 
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="blue"
 
-RUN apk add --no-cache bash nodejs
+RUN apk add --no-cache bash git nodejs
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 ENTRYPOINT ["/entrypoint.sh"]

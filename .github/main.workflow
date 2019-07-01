@@ -42,6 +42,6 @@ action "bump-version-if-success-on-master" {
 action "publish-if-success-on-master" {
   needs = "bump-version-if-success-on-master"
   uses = "./scripts/actions/local-yarn-command"
-  args = "bump-version-and-publish"
+  args = "lerna publish --yes"
   secrets = ["GH_TOKEN", "NPM_AUTH_TOKEN"]
 }
