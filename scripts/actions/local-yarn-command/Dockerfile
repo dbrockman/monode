@@ -7,5 +7,5 @@ LABEL "com.github.actions.color"="blue"
 
 RUN apk add --no-cache bash nodejs
 
-ADD entrypoint.sh /entrypoint.sh
+COPY "entrypoint.sh" "/entrypoint.sh"
 ENTRYPOINT ["/entrypoint.sh"]
