@@ -8,20 +8,14 @@ action "yarn-install" {
   args = "install"
 }
 
-action "yarn-bootstrap" {
-  needs = "yarn-install"
-  uses = "./scripts/actions/local-yarn-command"
-  args = "bootstrap"
-}
-
 action "yarn-lint" {
-  needs = "yarn-bootstrap"
+  needs = "yarn-install"
   uses = "./scripts/actions/local-yarn-command"
   args = "lint"
 }
 
 action "yarn-test" {
-  needs = "yarn-bootstrap"
+  needs = "yarn-install"
   uses = "./scripts/actions/local-yarn-command"
   args = "test"
 }
