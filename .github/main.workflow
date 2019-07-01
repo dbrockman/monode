@@ -32,6 +32,7 @@ action "bump-version-if-success-on-master" {
   args = "lerna version --conventional-commits --create-release github --yes"
   secrets = ["GH_TOKEN"]
   env = {
+    GH_USERNAME = "dbrockman"
     GIT_USER_EMAIL = "david@springworks.se"
     GIT_USER_NAME = "David Brockman Smoliansky"
   }
