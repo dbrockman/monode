@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
 set -e
+echo
+
+if [ -n "$GIT_USER_EMAIL" ]; then
+  git config --global user.email "$GIT_USER_EMAIL"
+fi
+
+if [ -n "$GIT_USER_NAME" ]; then
+  git config --global user.name "$GIT_USER_NAME"
+fi
 
 if [ -n "$NPM_AUTH_TOKEN" ]; then
   # Respect NPM_CONFIG_USERCONFIG if it is provided, default to $HOME/.npmrc
