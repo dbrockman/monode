@@ -1,6 +1,6 @@
 {
   "name": "@dbrockman/temp-test-pkg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small package to have at least one test to run",
   "private": true,
   "main": "build/main.js",
@@ -14,8 +14,6 @@
     "prebuild": "yarn run clean",
     "postbuild": "del 'build/**/__*__/'"
   },
-  "dependencies": {},
-  "devDependencies": {},
   "publishConfig": {
     "access": "public"
   },
