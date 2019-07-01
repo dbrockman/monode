@@ -8,10 +8,11 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna run clean",
     "build": "lerna run build",
-    "pretest": "yarn run build",
     "test": "jest",
     "lint": "# linter not configured yet",
-    "bump-version-and-publish": "lerna version --conventional-commits --create-release github --yes && lerna publish --yes"
+    "bump-version-and-publish": "lerna version --conventional-commits --create-release github --yes && lerna publish --yes",
+    "postinstall": "yarn run bootstrap",
+    "pretest": "yarn run build"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
@@ -24,6 +25,7 @@
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.2"
   },
+  "license": "MIT",
   "repository": "git@github.com:dbrockman/monode.git",
   "homepage": "https://github.com/dbrockman/monode#readme"
 }

@@ -1,5 +1,5 @@
-import { main } from '../main';
+import { main } from "../main";
 
-test('@dbrockman/temp-test-pkg', () => {
-  expect(main()).toBe('hello world');
+test("@dbrockman/temp-test-pkg", () => {
+  expect(main()).toBe("hello world");
 });
