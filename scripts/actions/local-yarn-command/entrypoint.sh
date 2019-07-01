@@ -11,9 +11,13 @@ if [ -n "$GIT_USER_NAME" ]; then
   git config --global user.name "$GIT_USER_NAME"
 fi
 
-if [[ -n "$GH_TOKEN" ]] && [[ -n "$GH_USERNAME" ]]; then
-  echo "machine github.com\nlogin $GH_USERNAME\npassword $GH_TOKEN\n\nmachine api.github.com\nlogin $GH_USERNAME\npassword $GH_TOKEN" > ~/.netrc
-  chmod 0600 ~/.netrc
+# Lerna expects an env var named GH_TOKEN
+if [[ -z "$GH_TOKEN" ]] && [[ -n "$GITHUB_TOKEN" ]]; then
+  export GH_TOKEN="$GITHUB_TOKEN"
+fi
+
+if [[ -n "$GH_USERNAME" ]] && [[ -n "$GITHUB_TOKEN" ]]; then
+  git remote set-url origin https://"${GH_USERNAME}":"${GITHUB_TOKEN}"@github.com/"${GITHUB_REPOSITORY}".git
 fi
 
 if [ -n "$NPM_AUTH_TOKEN" ]; then

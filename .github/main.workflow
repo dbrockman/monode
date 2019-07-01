@@ -30,7 +30,7 @@ action "bump-version-if-success-on-master" {
   needs = "only-on-master-branch-success"
   uses = "./scripts/actions/local-yarn-command"
   args = "lerna version --conventional-commits --create-release github --yes"
-  secrets = ["GH_TOKEN"]
+  secrets = ["GITHUB_TOKEN"]
   env = {
     GH_USERNAME = "dbrockman"
     GIT_USER_EMAIL = "david@springworks.se"
