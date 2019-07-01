@@ -31,11 +31,15 @@ action "bump-version-if-success-on-master" {
   uses = "./scripts/actions/local-yarn-command"
   args = "lerna version --conventional-commits --create-release github --yes"
   secrets = ["GH_TOKEN"]
+  env = {
+    GIT_USER_EMAIL = "david@springworks.se"
+    GIT_USER_NAME = "David Brockman Smoliansky"
+  }
 }
 
 action "publish-if-success-on-master" {
   needs = "bump-version-if-success-on-master"
   uses = "./scripts/actions/local-yarn-command"
   args = "lerna publish --yes"
-  secrets = ["GH_TOKEN", "NPM_AUTH_TOKEN"]
+  secrets = ["NPM_AUTH_TOKEN"]
 }
