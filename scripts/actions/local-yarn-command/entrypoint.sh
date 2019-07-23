@@ -37,4 +37,4 @@ if [ -n "$NPM_AUTH_TOKEN" ]; then
   chmod 0600 "$NPM_CONFIG_USERCONFIG"
 fi
 
-exec node ./.yarn/releases/yarn-1.16.0.js "$@"
+exec node ./.yarn/releases/yarn-1.17.3.js "$@"
