@@ -9,11 +9,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * add varint package ([c1cabe1](https://github.com/dbrockman/monode/commit/c1cabe1))
-
-
-
-
-
-## 1.0.1 (2019-07-01)
-
-**Note:** Version bump only for package workspace
