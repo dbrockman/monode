@@ -1,0 +1,26 @@
+{
+  "name": "@dbrockman/pack-buffers",
+  "version": "1.1.0",
+  "description": "Join multiple buffers into a single one with varints specifying the length of each buffer.",
+  "private": true,
+  "main": "build/main.js",
+  "types": "build/main.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "clean": "del 'build'",
+    "build": "tsc -p tsconfig.build.json",
+    "prebuild": "yarn run clean",
+    "postbuild": "del 'build/**/__*__/'"
+  },
+  "dependencies": {
+    "@dbrockman/varint": "^1.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": "git@github.com:dbrockman/monode.git",
+  "homepage": "https://github.com/dbrockman/monode/tree/master/code/pack-buffers#readme"
+}
