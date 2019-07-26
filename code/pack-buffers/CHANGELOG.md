@@ -9,22 +9,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * add pack-buffers package ([7b6874c](https://github.com/dbrockman/monode/commit/7b6874c))
-
-
-
-
-
-# [1.1.0](https://github.com/dbrockman/monode/compare/v1.0.1...v1.1.0) (2019-07-25)
-
-
-### Features
-
-* add varint package ([c1cabe1](https://github.com/dbrockman/monode/commit/c1cabe1))
-
-
-
-
-
-## 1.0.1 (2019-07-01)
-
-**Note:** Version bump only for package workspace

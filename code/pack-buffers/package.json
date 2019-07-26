@@ -1,6 +1,6 @@
 {
   "name": "@dbrockman/pack-buffers",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Join multiple buffers into a single one with varints specifying the length of each buffer.",
   "private": true,
   "main": "build/main.js",
