@@ -1,0 +1,23 @@
+{
+  "name": "@dbrockman/hash-length",
+  "version": "1.1.0",
+  "description": "Get number of bytes for a hash function",
+  "private": true,
+  "main": "build/main.js",
+  "types": "build/main.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "clean": "del 'build'",
+    "build": "tsc -p tsconfig.build.json",
+    "prebuild": "yarn run clean",
+    "postbuild": "del 'build/**/__*__/'"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": "git@github.com:dbrockman/monode.git",
+  "homepage": "https://github.com/dbrockman/monode/tree/master/code/hash-length#readme"
+}
